@@ -1,0 +1,72 @@
+.card {
+    background-color: rgba(27, 143, 201, 0.7);
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.user{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.user-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.user-picture {
+    width: 50%;
+    border-radius: 5%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.zombie{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.zombie-picture {
+    width: 100%;
+    border-radius: 5%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.zombie-name {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.weapon{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.weapon-picture {
+    width: 100%;
+    border-radius: 5%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.weapon-name {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}

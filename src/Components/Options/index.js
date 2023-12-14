@@ -3,41 +3,85 @@ import Weapons from '../Weapons';
 import Zombies from '../Zombies';
 import { useState } from 'react';
 
-const Options = () => {
+const Options = (options) => {
 
-    const [selectedZombie, setSelectedZombie] = useState("")
-    const [selectedWeapon, setSelectedWeapon] = useState("")
+    const [zombie, setZombie] = useState("")
+    const [weapon, setWeapon] = useState("")
+    const [img, setImg] = useState("")
+    const [weaponImg, setWeaponImg] = useState("")
+    const [userName, setUserName] = useState("")
+    const [userList, setUserList] = useState([])
+    const [userImg, setUserImg] = useState("")
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        setSelectedZombie("")
-        setSelectedWeapon("")
-        console.log(selectedZombie, selectedWeapon)
+        const data = {
+            userName,
+            zombie,
+            weapon,
+            img,
+            weaponImg,
+            userImg
+        }
+        options.options(data)
+        setUserList([...userList, data])
+        setZombie("")
+        setWeapon("")
+        setUserName("")
+        setUserImg("")
     }
 
     const handleZombieChange = (event) => {
-        setSelectedZombie(event.target.value)
+        setZombie(event.target.value)
+        setImg(Zombies.find((zombie) => zombie.name === event.target.value).img)
     }
 
     const handleWeaponChange = (event) => {
-        setSelectedWeapon(event.target.value)
+        setWeapon(event.target.value)
+        setWeaponImg(Weapons.find((weapon) => weapon.name === event.target.value).img)
+    }
+
+    const handleUserNameChange = (event) => {
+        setUserName(event.target.value)
+    }
+
+    const handleUserImgChange = (event) => {
+        setUserImg(event.target.value)
     }
 
     return (
         <form className='form' onSubmit={handleSubmit}>
-            <select className='list' value={selectedZombie} onChange={handleZombieChange} required>
+            <select className='list' value={zombie} onChange={handleZombieChange} required>
                 <option className='option' value="">Select a zombie</option>
                 {Zombies.map((zombie) => {
-                    return <option value={zombie.name} key={zombie.name}>{zombie.name}</option>
+                    return <option key={zombie.name}>{zombie.name}</option>
                 })}
             </select>
 
-            <select className='list' value={selectedWeapon} onChange={handleWeaponChange} required>
+            <select className='list' value={weapon} onChange={handleWeaponChange} required>
                 <option className='option' value="">Select a weapon</option>
                 {Weapons.map((Weapon) => {
                     return <option key={Weapon.name}>{Weapon.name}</option>
                 })}
             </select>
+
+            <input
+                className='input'
+                type='text'
+                placeholder='Enter your name'
+                required
+                value={userName}
+                onChange={handleUserNameChange}
+            />
+
+            <input
+                className='input'
+                type='text'
+                placeholder='User name of github'
+                required
+                value={userImg}
+                onChange={handleUserImgChange}
+            />
 
             <button type="submit">Choose</button>
         </form>
