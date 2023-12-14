@@ -13,7 +13,7 @@ function App() {
       weapon: "Weapon 1",
       img: "https://static1.thegamerimages.com/wordpress/wp-content/uploads/2022/02/pjimage---2022-02-06T182522393.jpg",
       weaponImg: "https://3dvf.com/wp-content/uploads/2022/07/image-4-1536x912.jpg",
-      userImg: "https://avatars.githubusercontent.com/u/92692618?v=4"
+      userImg: "https://image.cachorrogato.com.br/textimages/gato-vira-lata.jpg"
     }
   ]
 
